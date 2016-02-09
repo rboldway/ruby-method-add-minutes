@@ -2,7 +2,7 @@ def add_minutes(base,delta)
   raise ArgumentError, "first parameter is not a string" if !base.is_a? String
   raise ArgumentError, "first parameter is an empty string" if base.empty?
   raise ArgumentError, "#{base} is missing AM or PM" unless /(A|P)M\z/.match(base)
-  
+
   _base = /\A(\d{1,2}):(\d\d) (A|P)M\z/.match(base)
   raise ArgumentError, "#{base} is not [H]H:MM form" if _base.nil?
 
