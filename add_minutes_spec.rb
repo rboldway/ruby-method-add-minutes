@@ -34,6 +34,14 @@ describe "add_minutes" do
       end
     end
 
+    describe "invalid delta" do
+      it "delta is not integer" do
+        assert_raises ArgumentError do
+          add_minutes('12:00 AM', 'text')
+        end
+      end
+    end
+
   end
 
   describe "adding 0 minutes to" do
